@@ -10,7 +10,7 @@ import { useRouter } from 'next/router';
 const Header = () => {
   const router = useRouter();
   return (
-    <div className="flex flex-col space-y-9 md:flex-row md:space-y-0  px-3 py-4 md:py-1 mx-4 items-center justify-between h-48">
+    <div className="flex flex-col space-y-6 md:flex-row md:space-y-0  px-3 py-4 md:py-1 mx-4 items-center justify-between h-44 md:h-36">
       <div className="flex items-center space-x-7 ">
         <LeftIconItem title={'home'} onClick={() => router.push('/')}>
           <AiFillHome size={25} />
