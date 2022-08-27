@@ -1,9 +1,11 @@
+import axios from 'axios';
 import Header from 'components/headerComponents';
 import Navbar from 'components/navbarComponents';
 import Results from 'components/resultsComponents';
 import Head from 'next/head';
+import requests from 'utils/requests';
 
-export default function Home() {
+export default function Home({ results }) {
   return (
     <div>
       <Head>
@@ -24,7 +26,21 @@ export default function Home() {
       <Navbar />
 
       {/* Results Section */}
-      <Results />
+      <Results results={results} />
     </div>
   );
+}
+
+export async function getServerSideProps({ query }) {
+  const { genre } = query;
+  const qryTerm = requests[genre]?.url || requests['fetchTrending'].url;
+  const {
+    data: { results },
+  } = await axios.get(`https://api.themoviedb.org/3${qryTerm}`);
+
+  return {
+    props: {
+      results,
+    },
+  };
 }
