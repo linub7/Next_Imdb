@@ -8,7 +8,7 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: [''],
+    domains: ['image.tmdb.org'],
   },
 };
 

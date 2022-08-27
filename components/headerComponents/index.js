@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import ImdbLogo96 from 'public/images/imdb-96.png';
 import ImdbLogo from 'public/images/imdb-logo.png';
 import LeftIconItem from './LeftIconItem';
 import { AiFillHome } from 'react-icons/ai';

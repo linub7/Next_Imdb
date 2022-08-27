@@ -1,10 +1,10 @@
-import React from 'react';
+import MovieCard from './MovieCard';
 
 const Results = ({ results }) => {
   return (
-    <div>
+    <div className="bg-gray-700 text-gray-300 select-none sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
       {results?.map((result) => (
-        <h1 key={result?.id}>{result?.title}</h1>
+        <MovieCard key={result?.id} result={result} />
       ))}
     </div>
   );
