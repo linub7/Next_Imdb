@@ -10,8 +10,8 @@ import { useRouter } from 'next/router';
 const Header = () => {
   const router = useRouter();
   return (
-    <div className="flex px-3 py-2 mx-4 items-center justify-between">
-      <div className="flex items-center space-x-7 mt-5">
+    <div className="flex flex-col space-y-9 md:flex-row md:space-y-0  px-3 py-4 md:py-1 mx-4 items-center justify-between h-48">
+      <div className="flex items-center space-x-7 ">
         <LeftIconItem title={'home'} onClick={() => router.push('/')}>
           <AiFillHome size={25} />
         </LeftIconItem>
@@ -26,10 +26,16 @@ const Header = () => {
         </LeftIconItem>
       </div>
       <div
-        className="mt-5 hidden sm:block cursor-pointer"
+        className=" cursor-pointer hover:scale-105 transition-all duration-200 translate-y-2"
         onCanPlay={() => router.push('/')}
       >
-        <Image src={ImdbLogo} width={100} height={50} alt="Imdb" />
+        <Image
+          src={ImdbLogo}
+          width={100}
+          height={50}
+          alt="Imdb"
+          className="hover:brightness-110 transition-all duration-200"
+        />
       </div>
     </div>
   );

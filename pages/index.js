@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 export default function Home() {
   return (
-    <div className="bg-gray-800">
+    <div>
       <Head>
         <title>IMDB-Clone App</title>
         <meta
@@ -16,7 +16,9 @@ export default function Home() {
       </Head>
 
       {/* Header Section */}
-      <Header />
+      <div className="bg-gray-700">
+        <Header />
+      </div>
 
       {/* Navbar Section */}
       <Navbar />
